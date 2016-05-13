@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
   commentBody: {
     flex: 1,
     marginLeft: 5 * PIXEL_RATIO,
-    flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   imageContent: {
     flex: 0.4,
@@ -77,26 +77,6 @@ const styles = StyleSheet.create({
 export default function PostListItem(props) {
   function onItemPress() {
     props.onItemPress(props.id);
-  }
-  function info() {
-    let infos = [];
-    if (props.place) infos.push(<Text style={styles.infoText} key={'place'}>{props.place}</Text>);
-    if (props.level) {
-      let star = '';
-      for (let i = 0; i < props.level; i++) {
-        star += '★';
-      }
-      infos.push(<Text style={styles.infoText} key={'level'}>難易度：{star}</Text>);
-    }
-    if (props.detail_02 != 'null') infos.push(<Text style={styles.infoText} key={'detail_02'}>{props.detail_02}</Text>);
-    return infos;
-  }
-  function nearby() {
-    let data;
-    if (props.distance) {
-      data = <Text style={styles.infoText}>距離：{formatDistance(props.distance)}</Text>
-    }
-    return data;
   }
   return (
     <View style={props.bakColor}>
