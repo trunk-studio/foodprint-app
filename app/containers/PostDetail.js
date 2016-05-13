@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 function PostDetail(props) {
   function status() {
     let cover;
-    if (props.status !== 'null') {
+    if (props.status && props.status !== 'null') {
       cover = (
         <CoverCard
           title={props.status}
@@ -88,17 +88,20 @@ function PostDetail(props) {
   }
   function info() {
     let infos = [];
-    if (props.level) {
-      let star = '';
-      for (let i = 0; i < props.level; i++) {
-        star += '★';
-      }
-      infos.push(<Text style={styles.infoText} key={'level'}>難易度：{star}</Text>);
+    if (props.detail_01 !== 'null') {
+      infos.push(
+        <Text
+          style={styles.placeText}
+          key={'detail_01'}
+        >
+          {props.detail_01}
+        </Text>
+      );
     }
     if (props.detail_02 !== 'null') {
       infos.push(
         <Text
-          style={styles.infoText}
+          style={styles.placeText}
           key={'detail_02'}
         >
           {props.detail_02}
@@ -107,24 +110,7 @@ function PostDetail(props) {
     }
     return infos;
   }
-  function map() {
-    let mapImg;
-    if (props.map != 'null') {
-      mapImg = (
-        <View style={{ flex: 1, marginBottom: 20 }}>
-          <Image
-            source={{ uri: props.map }}
-            style={{
-              flex: 1,
-              padding: 20,
-              height: 500,
-            }}
-          />
-      </View>
-      );
-    }
-    return mapImg;
-  }
+
   return (
     <View style={styles.wrapper}>
       <ScrollView style={styles.scrollFrame}>
@@ -136,20 +122,13 @@ function PostDetail(props) {
                 {props.title}
               </Text>
               <Text style={styles.placeText}>
-                {props.place}
+                {info()}
               </Text>
             </View>
             <Text style={{ fontSize: 14, marginBottom: 20, lineHeight: 25 }}>
-               {props.description_01}
-            </Text>
-            {map()}
-            <Text style={{ fontSize: 14, marginBottom: 20, lineHeight: 25 }}>
-                {props.description_02 !== 'null' ? props.description_02 : null }
+               {props.description}
             </Text>
           </View>
-        </View>
-        <View style={{ position: 'absolute', top: 10, right: 10 }}>
-          {info()}
         </View>
       </ScrollView>
     </View>

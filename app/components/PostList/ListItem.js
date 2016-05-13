@@ -109,8 +109,6 @@ export default function PostListItem(props) {
             <Text style={styles.title} numberOfLines={2} >
               {props.title}
             </Text>
-            {nearby()}
-            {info()}
           </View>
         </View>
         <Text style={styles.commentText} numberOfLines={3}>
@@ -122,7 +120,7 @@ export default function PostListItem(props) {
 }
 
 PostListItem.propTypes = {
-  id: React.PropTypes.number.isRequired,
+  id: React.PropTypes.number,
   title: React.PropTypes.string,
   description: React.PropTypes.string,
   img: React.PropTypes.string,

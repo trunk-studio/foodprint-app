@@ -9,7 +9,7 @@ import NewsItem from './NewsItem';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F1F7EB',
+    backgroundColor: '#fff',
   },
   defaultTxt: {
     fontSize: 20,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   boardBar: {
-    backgroundColor: 'rgb(79, 164, 89)',//'#359ac0',
+    backgroundColor: '#87C2D8',
     paddingLeft: 20,
     paddingTop: 10,
     paddingBottom: 10,

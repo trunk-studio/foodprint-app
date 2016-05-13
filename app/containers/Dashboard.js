@@ -17,7 +17,7 @@ import { requestWeather } from '../actions/WeatherActions';
 import { requestSetLocation } from '../actions/GeoActions';
 
 
-const coverImg = {uri: 'https://pixabay.com/static/uploads/photo/2015/10/05/15/37/forest-972792_960_720.jpg'}; //require('../images/dashboard.jpg');
+const coverImg = {uri: 'https://image.freepik.com/free-vector/kitchen-elements-and-food_23-2147514325.jpg'}; //require('../images/dashboard.jpg');
 const windowSize = Dimensions.get('window');
 const styles = StyleSheet.create({
   wrapper: {
@@ -35,20 +35,8 @@ export default class Dashboard extends Component {
   componentDidMount() {
     this.props.requestNews();
     this.props.requestToday();
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.props.requestSetLocation(position);
-      },
-      (error) => Alert.alert(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
-    );
   }
-  componentWillReceiveProps(nextProps) {
-    const { countryName, locationName } = nextProps;
-    if (locationName !== undefined && locationName !== this.props.locationName) {
-      this.props.requestWeather({ name: locationName, country: countryName });
-    }
-  }
+
   render() {
     function onListItemPress(detail) {
       Actions.newsDetail({
@@ -66,13 +54,13 @@ export default class Dashboard extends Component {
     }
     return (
       <View style={styles.wrapper}>
-        <CoverCard img={coverImg} title={'登山趣'} height={windowSize.height * 0.3} />
+        <CoverCard img={coverImg} title={'食安一指通'} height={windowSize.height * 0.3} />
         {/*
         <InfoBar month={month} date={date} weekday={weekday} temp={temp} desc={desc}
           iconId={iconId} locationName={this.props.locationName}
         />
         */}
-        <NewsBoard boardTitle={'近期活動'} listData={activityListData}
+        <NewsBoard boardTitle={'最新消息'} listData={activityListData}
           itemCount={3} onItemPress={onListItemPress}
         />
       </View>

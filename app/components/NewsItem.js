@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const styles = StyleSheet.create({
   newsItem: {
     flexDirection: 'row',
-    borderBottomColor: '#417505',//'#333',
+    borderBottomColor: '#064C69',
     borderBottomWidth: 1,
   },
   newsConent: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 40,
-    color: '#417505', //'#359ac0',
+    color: '#359AC0',
   },
   newsTitle: {
     fontSize: 19,
