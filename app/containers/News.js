@@ -7,12 +7,16 @@ import NewsBoard from '../components/NewsBoard';
 import { connect } from 'react-redux';
 import { requestNews } from '../actions/SearchActions';
 import { Actions } from 'react-native-router-flux';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop: 64,
+    // marginTop: 64,
     marginBottom: 50,
+  },
+  container: {
+    marginTop: 64,
   },
 });
 
@@ -29,9 +33,26 @@ export default class News extends Component {
       });
     }
     return (
-      <View style={styles.wrapper}>
-        <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
-      </View>
+      <ScrollableTabView
+        style={styles.container}
+        renderTabBar={() => <DefaultTabBar backgroundColor="rgba(255, 255, 255, 0.7)" />}
+      >
+        <View tabLabel="全部" style={styles.wrapper}>
+          <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
+        </View>
+        <View tabLabel="農糧產品" style={styles.wrapper}>
+          <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
+        </View>
+        <View tabLabel="林產品" style={styles.wrapper}>
+          <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
+        </View>
+        <View tabLabel="漁產品" style={styles.wrapper}>
+          <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
+        </View>
+        <View tabLabel="畜產品" style={styles.wrapper}>
+          <NewsBoard boardTitle={'今日舉行的活動'} listData={listData} onItemPress={onListItemPress} />
+        </View>
+      </ScrollableTabView>
     );
   }
 }

@@ -50,7 +50,7 @@ export default function AppRoutes() {
               <Route name="nearby" component={Nearby} title="附近步道" />
             </Router>
           </Route>*/}
-          <Route name="tabNews" schema="tab" title="食安問答" iconName="newspaper-o">
+          <Route name="tabNews" schema="tab" title="食安問答" iconName="newspaper-o" >
             <Router>
               <Route name="news" component={News} title="食安問答" />
               <Route name="newsDetail" component={NewsDetail} title="活動資訊" />

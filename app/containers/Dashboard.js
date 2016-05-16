@@ -46,7 +46,7 @@ export default class Dashboard extends Component {
     }
     const { listData, month, date, weekday, temp, desc, iconId } = this.props;
     let activityListData = [];
-    for (const item of activityData.list) {
+    for (const item of activityData.activity.list) {
       activityListData.push({
         title: item.title,
         content: item.description,
