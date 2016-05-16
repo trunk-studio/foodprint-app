@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     marginLeft: 13 * PIXEL_RATIO,
     // flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   title: {
     flex: 1,
     fontWeight: '700',
-    color: 'rgb(198, 118, 69)',
+    color: '#064C69',
     padding: 2 * PIXEL_RATIO,
     // paddingTop: 3 * PIXEL_RATIO,
-    fontSize: 14,
+    fontSize: 18,
   },
   commentBody: {
     flex: 1,
@@ -91,9 +91,6 @@ export default function PostListItem(props) {
             </Text>
           </View>
         </View>
-        <Text style={styles.commentText} numberOfLines={3}>
-          {props.description}
-        </Text>
       </TouchableOpacity>
     </View>
   );

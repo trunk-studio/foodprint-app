@@ -45,14 +45,14 @@ export default function AppRoutes() {
               <Route name="category" component={Category} title="月份導覽" />
             </Router>
           </Route>
-          <Route name="tabNearby" schema="tab" title="最新資訊" iconName="tree">
+          {/*<Route name="tabNearby" schema="tab" title="最新資訊" iconName="tree">
             <Router>
               <Route name="nearby" component={Nearby} title="附近步道" />
             </Router>
-          </Route>
+          </Route>*/}
           <Route name="tabNews" schema="tab" title="食安問答" iconName="newspaper-o">
             <Router>
-              <Route name="news" component={News} title="最新資訊" />
+              <Route name="news" component={News} title="食安問答" />
               <Route name="newsDetail" component={NewsDetail} title="活動資訊" />
             </Router>
           </Route>
