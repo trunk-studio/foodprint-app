@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
   },
   itemImg: {
     borderRadius: 3,
-    width: 84,
-    height: 70,
+    width: 80,
+    height: 80,
   },
   rightBlock: {
     flex: 1,

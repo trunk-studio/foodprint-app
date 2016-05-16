@@ -40,7 +40,7 @@ export default function NewsBoard(props) {
             key={i}
             index={i}
             title={news.title}
-            content={news.content}
+            content={news.content || news.description}
             onItemPress={props.onItemPress}
           />
         );
